@@ -1,0 +1,22 @@
+.page-frame-content {
+  height: 100vh;
+  // background-image: linear-gradient(rgba(0, 0, 0, 0.431), rgba(0, 0, 0, 0.452));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.page-frame-header {
+  background-color: lightblue;
+  // padding: 16px;
+}
+
+.page-frame-body {
+  flex-grow: 1;
+  overflow: scroll;
+}
+
+.page-frame-footer {
+  background-color: lightblue;
+  // padding: 16px;
+}

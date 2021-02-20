@@ -1,2 +1,10 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="page-frame-content">
+  <div class="page-frame-header">
+    <%= render 'navbar' %>
+    <%= render 'banner' %>
+  </div>
+    <%= yield %>
+  <div class="page-frame-footer">
+    <%= render 'footer' %>
+  </div>
+</div>

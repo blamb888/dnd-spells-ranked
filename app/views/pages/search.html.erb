@@ -5,7 +5,7 @@
   </div>
   <div class="container">
     <div class="frame-body">
-      <% @results.each do |spell| %>
+      <% @results.sort_by(&:average_rating).reverse.each do |spell| %>
   <!--Cards Top-->
     <div id="accordion" class="my-2">
       <div class="card">

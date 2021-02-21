@@ -1,0 +1,13 @@
+<div class="container d-flex justify-content-center">
+  <div class="card col-6 p-3" style="width: 22rem; margin-top: 50px;">
+    <%= simple_form_for [@spell, @review] do |f| %>
+      <%= f.input :content  %>
+      <%= f.input :rating, collection: 0..5, include_blank: false %>
+      <%= f.submit class: "btn btn-primary btn-block"  %>
+    <% end %>
+    <div class="containter my-3">
+      <%= link_to 'Back', root_path, class: "btn btn-primary" %>
+      <%= link_to 'Home', spells_path, class: "btn btn-secondary" %>
+    </div>
+  </div>
+</div>

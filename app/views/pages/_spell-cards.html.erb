@@ -5,26 +5,25 @@
         <div class="card-header" id="headingOne">
           <h5 class="mb-0">
             <button class="btn btn-link" data-toggle="collapse" data-target="#collapse<%= spell.id %>" aria-expanded="true" aria-controls="collapse<%= spell.id %>">
-              <%= spell.name %> Conjuration {School} 0 {Level} Acid {Damage_type}
+              <%= spell.name %> | <%= spell.school  %> | Level: <%= spell.level  %> | Damage Type: <%= spell.damage_type  %>
             </button>
           </h5>
         </div>
 
         <div id="collapse<%= spell.id %>" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
           <div class="card-body">
-            {School} Conjuration
-            {Spell Range} 60 feet
-            {Components} V, S
-            {Ritual} false
-            {Duration} Instantaneous
-            {Concentration} false
-            {Casting Time} 1 action
-            {Level} 0 (cantrip)
-            {Spell Description}
-            You hurl a bubble of acid. Choose one creature within range, or choose two creatures within range that are within 5 feet of each other. A target must succeed on a dexterity saving throw or take 1d6 acid damage.",
-            "This spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).
-            {Classes["name"]} Sorcerer, Wizard
-            {Subclasses} Lore
+              <p>School: <%= spell.school  %></p>
+              <p>Range: <%= spell.range  %></p>
+              <p>Components: <%= spell.components  %></p>
+              <p>Ritual: <%= spell.ritual  %></p>
+              <p>Duration: <%= spell.duration  %></p>
+              <p>Concentration: <%= spell.concentration  %></p>
+              <p>Casting Time: <%= spell.casting_time  %></p>
+              <p>Spell Level: <%= spell.level  %></p>
+                <h5 style="text-decoration: underline;">Description</h5>
+              <p><%= spell.desc  %></p>
+              <p>Classes: <%= spell.classes  %></p>
+              <p>Subclasses: <%= spell.subclasses  %></p>
           </div>
         </div>
       </div>

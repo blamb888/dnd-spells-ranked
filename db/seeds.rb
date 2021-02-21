@@ -27,8 +27,31 @@ puts "Db is clean"
 
 5.times do |key|
   key + 1
+  url2 = "https://www.dnd5eapi.co#{objs["results"][key]["url"]}"
+  json2 = open(url2).read
+  objs2 = JSON.parse(json2)
+  damage_name = objs2.dig("damage", "damage_type", "name")
+  school = objs2.dig("school", "name")
+  classes = objs2["classes"].pluck("name")
+  subclasses = objs2["subclasses"].pluck("name")
+
   spell = Spell.create!(
-    name: "#{objs["results"][key]["name"]}"
+    name: "#{objs["results"][key]["name"]}",
+    desc: "#{objs2["desc"]}",
+    higher_level: "#{objs2["higher_level"]}",
+    range: "#{objs2["range"]}",
+    components: "#{objs2["components"]}",
+    material: "#{objs2["material"]}",
+    ritual: "#{objs2["ritual"]}",
+    duration: "#{objs2["duration"]}",
+    concentration: "#{objs2["concentration"]}",
+    casting_time: "#{objs2["casting_time"]}",
+    level: "#{objs2["level"]}",
+    attack_type: "#{objs2["attack_type"]}",
+    damage_type: "#{damage_name}",
+    school: "#{school}",
+    classes: "#{classes}",
+    subclasses: "#{subclasses}"
     )
   puts "#{spell.name} created!"
 end

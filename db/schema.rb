@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_20_165735) do
+ActiveRecord::Schema.define(version: 2021_02_21_035721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,21 @@ ActiveRecord::Schema.define(version: 2021_02_20_165735) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "desc"
+    t.string "higher_level"
+    t.string "range"
+    t.string "components"
+    t.string "material"
+    t.boolean "ritual"
+    t.string "duration"
+    t.boolean "concentration"
+    t.string "casting_time"
+    t.integer "level"
+    t.string "attack_type"
+    t.string "damage_type"
+    t.string "school"
+    t.string "classes"
+    t.string "subclasses"
   end
 
 end

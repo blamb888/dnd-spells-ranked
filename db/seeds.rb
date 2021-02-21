@@ -34,7 +34,7 @@ puts "Db is clean"
   school = objs2.dig("school", "name")
   classes = objs2["classes"].pluck("name")
   subclasses = objs2["subclasses"].pluck("name")
-
+  puts classes
   spell = Spell.create!(
     name: "#{objs["results"][key]["name"]}",
     desc: "#{objs2["desc"]}",

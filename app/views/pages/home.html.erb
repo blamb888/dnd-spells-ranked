@@ -5,7 +5,8 @@
   </div>
   <div class="container">
     <div class="frame-body">
-      <%= render 'spell-cards' %>
+    <% @spells = Spell.all %>
+      <%= render './spells/spell-cards' %>
     </div>
   </div>
   <div class="page-frame-footer">

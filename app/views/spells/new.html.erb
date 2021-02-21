@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="card p-3 my-5">
+    <h2>New Spell Creation</h2>
+    <%= simple_form_for @spell do |f| %>
+      <%= f.input :name %>
+      <%= f.input :level %>
+      <%= f.input :school, collection: Spell::SCHOOLS, include_blank: false %>
+      <%= f.input :components %>
+      <%= f.input :material %>
+      <%= f.input :ritual %>
+      <%= f.input :duration %>
+      <%= f.input :concentration %>
+      <%= f.input :casting_time %>
+      <%= f.input :level %>
+      <%= f.input :attack_type %>
+      <%= f.input :damage_type, collection: Spell::DAMAGETYPES, include_blank: false%>
+      <%= f.input :classes %>
+      <%= f.input :subclasses %>
+      <% if @spell.id %>
+        <%= f.submit 'Update', class: 'btn btn-info' %>
+        <%= link_to 'Home', spells_path, class: "btn btn-primary" %>
+      <% else %>
+        <%= f.submit 'Add', class: 'btn btn-info' %>
+        <%= link_to 'Home', spells_path, class: "btn btn-primary" %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

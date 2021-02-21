@@ -7,6 +7,26 @@ class SpellsController < ApplicationController
 
   def show
   end
+  # GET spells by category
+  def wizard
+    @spells = Spell.all.where(classes: "[\"Wizard\"]")
+  end
+
+  def bard
+    @spells = Spell.all.where(classes: "[\"Bard\"]")
+  end
+
+  def sorcerer
+    @spells = Spell.all.where(classes: "[\"Sorcerer\"]")
+  end
+
+  def warlock
+    @spells = Spell.all.where(classes: "[\"Warlock\"]")
+  end
+
+  def paladin
+    @spells = Spell.all.where(classes: "[\"Paladin\"]")
+  end
 
   def new
     @spell = Spell.new
@@ -35,6 +55,6 @@ class SpellsController < ApplicationController
   end
 
   def spell_params
-    params.require(:spell).permit(:name)
+    params.require(:spell).permit(:name, :dex, :higher_level, :range, :components, :material, :ritual, :duration, :concentration, :casting_time, :level, :attack_type, :damage_type, :school, :classes, :subclasses)
   end
 end

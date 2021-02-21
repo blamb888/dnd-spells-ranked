@@ -19,13 +19,14 @@
           Categories
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to 'Wizard', "#", class: "dropdown-item" %>
-          <%= link_to 'Bard', "#", class: "dropdown-item" %>
-          <%= link_to 'Sorcerer', "#", class: "dropdown-item" %>
-          <%= link_to 'Warlock', "#", class: "dropdown-item" %>
-          <%= link_to 'Paladin', "#", class: "dropdown-item" %>
+          <%= link_to 'Wizard', wizard_spells_path, class: "dropdown-item" %>
+          <%= link_to 'Bard', bard_spells_path, class: "dropdown-item" %>
+          <%= link_to 'Sorcerer', sorcerer_spells_path, class: "dropdown-item" %>
+          <%= link_to 'Warlock', warlock_spells_path, class: "dropdown-item" %>
+          <%= link_to 'Paladin', paladin_spells_path, class: "dropdown-item" %>
           <div class="dropdown-divider"></div>
-          <%= link_to 'Add a spell', "#", class: "dropdown-item" %>
+          <%= link_to 'Home', root_path, class: "dropdown-item" %>
+          <%= link_to 'Add a spell', new_spell_path, class: "dropdown-item" %>
         </div>
       </li>
       <li class="nav-item dropdown">

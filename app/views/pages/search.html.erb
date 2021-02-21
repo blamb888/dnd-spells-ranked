@@ -65,28 +65,28 @@
                 <ul class="list-group list-group-flush">
                   <% spell.reviews.each do |review| %>
                   <li class="list-group-item">
-                    <h4><%= review.content %></h4>
+                    <h5><%= review.content %></h5>
                     <div class="d-flex justify-content-between">
-                      <h4 class="pl-0">Rating:<% review.rating.times do %>
-                        <i class="fas fa-star" style="color: rgba(255, 255, 0, 0.9);"></i>
+                      <h5 class="pl-0">Rating:<% review.rating.times do %>
+                        <i class="fas fa-star"></i>
                       <% end %>
                       <% if 5 - review.rating > 0 %>
                         <% (5 - review.rating).times do %>
-                          <i class="far fa-star" style="color: rgba(245, 245, 0, 0.897);"></i>
+                          <i class="far fa-star"></i>
                         <% end %>
                       <% end %>
-                      </h4>
-                      <h4>
+                      </h5>
+                      <h5>
                         <%= link_to review_path(review), method: :delete, data: { confirm: "Are you sure you want to delete this review, buddy?" } do %>
                           <i class="fas fa-times"></i>
                         <% end %>
-                      </h4>
+                      </h5>
                     </div>
                   </li>
                   <% end %>
                 </ul>
           </div>
-          <%= link_to 'Add Review', new_spell_review_path(spell), class: "btn btn-success" %>
+          <%= link_to 'Add Review', new_spell_review_path(spell), class: "btn btn-success", id: "addReview" %>
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ class Spell < ApplicationRecord
   DAMAGETYPES = ['Poison', 'Acid', 'Fire', 'Cold', 'Radiant', 'Necrotic', 'Lightning', 'Thunder', 'Force', 'Psychic']
 
   def average_rating
-  return 0 if reviews.empty?
-  (reviews.pluck(:rating).sum / reviews.count)
+    return 0 if reviews.empty?
+    (reviews.pluck(:rating).sum / reviews.count)
   end
 end

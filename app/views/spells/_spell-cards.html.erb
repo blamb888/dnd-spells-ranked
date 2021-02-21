@@ -1,5 +1,5 @@
 <!--<% @spells = Spell.all %>-->
-  <% @spells.each do |spell| %>
+  <% @spells.sort_by(&:average_rating).reverse.each do |spell| %>
     <div id="accordion" class="my-2">
       <div class="card rounded">
         <div class="card-header bg-white" id="headingOne">

@@ -25,7 +25,7 @@ puts "Db is clean"
 #   puts "#{spell.name} created!"
 # end
 
-5.times do |key|
+319.times do |key|
   key + 1
   url2 = "https://www.dnd5eapi.co#{objs["results"][key]["url"]}"
   json2 = open(url2).read

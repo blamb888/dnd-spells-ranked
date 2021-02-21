@@ -11,6 +11,8 @@ url = "https://www.dnd5eapi.co/api/spells"
 json = open(url).read
 objs = JSON.parse(json)
 
+puts "Testing...#{objs["results"][1]["name"]} in the API. Did not cretae the spell yet."
+puts "Testing...#{objs["results"][2]["name"]} in the API. Did not create the spell yet."
 puts "Cleaning up db"
 Spell.destroy_all
 puts "Db is clean"
@@ -23,10 +25,12 @@ puts "Db is clean"
 #   puts "#{spell.name} created!"
 # end
 
-5.times do
+5.times do |key|
+  key + 1
   spell = Spell.create!(
-    name: "#{objs["results"].first}"
+    name: "#{objs["results"][key]["name"]}"
     )
   puts "#{spell.name} created!"
 end
 
+puts "#{Spell.count} spells created!"

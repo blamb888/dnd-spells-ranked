@@ -9,23 +9,23 @@ class SpellsController < ApplicationController
   end
   # GET spells by category
   def wizard
-    @spells = Spell.all.where(classes: "[\"Wizard\"]")
+    @spells = Spell.where(classes: "[\"Wizard\"]")
   end
 
   def bard
-    @spells = Spell.all.where(classes: "[\"Bard\"]")
+    @spells = Spell.where(classes: "[\"Bard\"]")
   end
 
   def sorcerer
-    @spells = Spell.all.where(classes: "[\"Sorcerer\"]")
+    @spells = Spell.where(classes: "[\"Sorcerer\"]")
   end
 
   def warlock
-    @spells = Spell.all.where(classes: "[\"Warlock\"]")
+    @spells = Spell.where(classes: "[\"Warlock\"]")
   end
 
   def paladin
-    @spells = Spell.all.where(classes: "[\"Paladin\"]")
+    @spells = Spell.where(classes: "[\"Paladin\"]")
   end
 
   def new

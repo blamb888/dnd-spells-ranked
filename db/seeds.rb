@@ -32,15 +32,15 @@ puts "Db is clean"
   objs2 = JSON.parse(json2)
   damage_name = objs2.dig("damage", "damage_type", "name")
   school = objs2.dig("school", "name")
-  classes = objs2["classes"].pluck("name")
-  subclasses = objs2["subclasses"].pluck("name")
+  classes = objs2["classes"].pluck("name")[0]
+  subclasses = objs2["subclasses"].pluck("name")[0]
   puts classes
   spell = Spell.create!(
     name: "#{objs["results"][key]["name"]}",
-    desc: "#{objs2["desc"]}",
+    desc: "#{objs2["desc"][0]}",
     higher_level: "#{objs2["higher_level"]}",
     range: "#{objs2["range"]}",
-    components: "#{objs2["components"]}",
+    components: "#{objs2["components"][0]}",
     material: "#{objs2["material"]}",
     ritual: "#{objs2["ritual"]}",
     duration: "#{objs2["duration"]}",

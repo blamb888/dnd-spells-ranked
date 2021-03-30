@@ -8,6 +8,9 @@ class PagesController < ApplicationController
     else
       @parameter = params[:search].downcase
       @results = Spell.all.where("lower(name) LIKE :search", search: "%#{@parameter}%")
+
+      # @results = Spell.all.where("lower(name) ILIKE :search", search: "%#{@parameter}%")
+
     end
   end
 

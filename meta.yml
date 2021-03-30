@@ -1,0 +1,5 @@
+meta_product_name: "D&D Spells Ranked"
+meta_title: "D&D Spells Ranked - See what everyone else is casting."
+meta_description: "A Dungeons and Dragons community project."
+meta_image: "frostmaiden.jpg" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards

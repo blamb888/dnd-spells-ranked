@@ -2,7 +2,11 @@ class SpellsController < ApplicationController
   before_action :find_spell, only: [:show]
 
   def index
-    @spells = Spell.all
+    if params[:query].present?
+      @spells = Spells.where(name: params[:query])
+    else
+      @spells = Spell.all
+    end
   end
 
   def show

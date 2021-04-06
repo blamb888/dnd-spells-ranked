@@ -3,7 +3,7 @@ class SpellsController < ApplicationController
 
   def index
     if params[:query].present?
-      @spells = Spells.where(name: params[:query])
+      @spells = Spells.where("name ILIKE ?", "%#{params[:query]}")
     else
       @spells = Spell.all
     end

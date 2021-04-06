@@ -5,8 +5,8 @@
         <%= form_tag(search_page_path, :method => "get",
         class: 'navbar-form navbar-left') do %>
         <div class="input-group">
-          <%= text_field_tag :query, params[:query], placeholder: "fireball ftw", class: "form-control" %>
-          <button name="button" value="query" type="submit" class="btn btn-danger rounded">
+          <%= search_field_tag :search, params[:search], placeholder: "fireball ftw", class: "form-control" %>
+          <button name="button" type="submit" class="btn btn-danger rounded">
               <i class="fas fa-search"></i> Search
           </button>
         </div>
